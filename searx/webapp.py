@@ -614,12 +614,8 @@ def health():
 
 
 @app.route('/privacy', methods=['GET'])
-def privacy_policy():
-    return send_from_directory(
-        os.path.join(app.root_path, settings['ui']['static_path'], 'pages', 'privacy'),  # pyright: ignore
-        'index.html',
-        mimetype='text/html',
-    )
+def privacy_policy():return send_from_directory(os.path.join(app.root_path,settings['ui']['static_path'],'pages','privacy'),'index.html',mimetype='text/html',)
+
 
 
 @app.route('/client<token>.css', methods=['GET', 'POST'])
@@ -1235,6 +1231,7 @@ def favicon():
         'favicon.png',
         mimetype='image/vnd.microsoft.icon',
     )
+
 
 @app.route('/clear_cookies')
 def clear_cookies():

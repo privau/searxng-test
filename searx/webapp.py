@@ -1228,6 +1228,15 @@ def favicon():
     )
 
 
+@app.route('/privacy')
+def privacy():
+    return send_from_directory(
+        os.path.join(app.root_path, settings['ui']['static_path'], 'pages', 'privacy'),  # pyright: ignore
+        'index.html',
+        mimetype='text/html',
+    )
+
+
 @app.route('/clear_cookies')
 def clear_cookies():
     resp = make_response(redirect(url_for('index', _external=True)))

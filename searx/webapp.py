@@ -617,7 +617,6 @@ def health():
 def privacy_policy():return send_from_directory(os.path.join(app.root_path,settings['ui']['static_path'],'pages','privacy'),'index.html',mimetype='text/html',)
 
 
-
 @app.route('/client<token>.css', methods=['GET', 'POST'])
 def client_token(token=None):
     link_token.ping(request, token)

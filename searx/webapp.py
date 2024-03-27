@@ -1230,11 +1230,13 @@ def favicon():
 
 @app.route('/privacy')
 def privacy():
-    return send_from_directory(
-        os.path.join(app.root_path, settings['ui']['static_path'], 'pages', 'privacy'),  # pyright: ignore
-        'index.html',
-        mimetype='text/html',
-    )
+    #return send_from_directory(
+    #    os.path.join(app.root_path, settings['ui']['static_path'], 'pages', 'privacy'),  # pyright: ignore
+    #    'index.html',
+    #    mimetype='text/html',
+    #)
+    return Response('OK', mimetype='text/plain')
+
 
 
 @app.route('/clear_cookies')
